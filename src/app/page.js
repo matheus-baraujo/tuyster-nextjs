@@ -1,12 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
+import result from "./api/teste";
+
+export default async function Home() {
+
+  console.log(result);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        
-      </main>
+    <div>
+        teste
     </div>
   );
 }

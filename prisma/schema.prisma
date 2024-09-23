@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model admin {
+  id_admin    Int    @id @default(autoincrement())
+  login_admin String @unique(map: "login_admin_UNIQUE") @db.VarChar(45)
+  senha_admin String @db.VarChar(45)
+}
+
+model clientes {
+  id_cli    String   @id @db.VarChar(255)
+  idemp_cli String   @db.VarChar(255)
+  nome      String   @db.VarChar(255)
+  CPF       String   @db.VarChar(16)
+  email     String   @db.VarChar(255)
+  data_nas  DateTime @db.Date
+  login     String   @db.VarChar(255)
+  senha     String   @db.VarChar(255)
+  cargo     Int
+  telefone  String   @db.VarChar(255)
+  endereco  String   @db.Text
+  bairro    String   @db.Text
+  numero    Int
+  cidade    String   @db.VarChar(255)
+  UF        String   @db.VarChar(2)
+  cep       String   @db.VarChar(255)
+}
+
+model embalagens {
+  idemb       String @id @db.VarChar(255)
+  descricao   String @db.Text
+  unid_med    String @db.VarChar(10)
+  quant_unid  Int
+  agrupamento String @db.VarChar(10)
+}
+
+model emp_vend {
+  id         Int      @id
+  empresa    String   @db.VarChar(255)
+  CNPJ       String   @db.VarChar(20)
+  Estado     String   @db.VarChar(4)
+  Cidade     String   @db.VarChar(40)
+  quant_prod Int
+  data_cad   DateTime @db.DateTime(0)
+  idcatemp   Int
+  endereco   String   @db.VarChar(255)
+  bairro     String   @db.VarChar(255)
+  numero     Int
+  cep        String   @db.VarChar(255)
+  email      String   @db.VarChar(255)
+  telefone   String   @db.VarChar(255)
+}
+
+model estatisticas {
+  id            Int     @id
+  id_prod       Int
+  visualizacoes Int
+  ordenacao     Int
+  visivel       Boolean
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model historico {
+  id       Int      @id
+  ids_prod String   @db.Text
+  quants   String   @db.Text
+  cod_cli  String   @db.VarChar(255)
+  data     DateTime @db.DateTime(0)
+}
+
+model ordem {
+  id_venda String   @id @db.VarChar(255)
+  id_prod  Int
+  id_cli   Int
+  preco    Float
+  data     DateTime @db.DateTime(0)
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model preco_estoque {
+  id        Int    @id
+  codbar    String @db.VarChar(255)
+  id_emp    String @db.VarChar(255)
+  preco_pub String @db.VarChar(40)
+  estoque   Int
+}
+
+model produtos {
+  id           Int    @id
+  codbar       String @db.VarChar(255)
+  produto      String @db.VarChar(255)
+  descricao    String @db.Text
+  dimensoes    String @db.VarChar(255)
+  foto_png     String @db.VarChar(255)
+  foto_webp    String @db.VarChar(255)
+  marca        String @db.VarChar(255)
+  preco_medio  Int
+  peso         Float  @db.Float
+  categoria    String @db.VarChar(255)
+  departamento String @db.VarChar(255)
+  codigoFab    String @db.VarChar(255)
+}
