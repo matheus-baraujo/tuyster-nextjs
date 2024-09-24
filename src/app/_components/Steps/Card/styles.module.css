@@ -1,0 +1,46 @@
+.wrapper{
+    color: rgb(50, 104, 174);
+    background-color: white;
+    border: #3268ae 3px solid;
+    border-radius: 5px;
+    
+    margin: 20px 0px;
+
+    transition: ease-in-out .5s;
+}
+
+.wrapper:hover{
+    border-radius: 0%;
+    box-shadow: 5px 5px 0px #3268ae;
+}
+
+.wrapper:hover .Shades{
+    backdrop-filter: invert(80%);
+}
+
+.Icon, .Content{
+    height: 100%;
+}
+
+.Icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Content .Title{
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Shades{
+    /* backdrop-filter: invert(80%); */
+    transition: ease-in-out .5s;
+}
+

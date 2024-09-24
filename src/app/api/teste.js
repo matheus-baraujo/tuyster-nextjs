@@ -1,6 +1,4 @@
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from "../_database/client";
 
 async function Teste() {
     const teste1 = await prisma.produtos.findMany({take:5});

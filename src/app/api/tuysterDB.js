@@ -1,4 +1,4 @@
-import prisma from "../database/client";
+import prisma from "../_database/client";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -16,3 +16,4 @@ export default async function handler(req, res) {
   
     return res.status(405).json({ message: 'Only POST requests allowed' });
 }
+
