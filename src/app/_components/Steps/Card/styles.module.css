@@ -6,10 +6,11 @@
     
     margin: 20px 0px;
 
-    transition: ease-in-out .5s;
+    transition: ease-in-out .3s;
 }
 
 .wrapper:hover{
+    transform: translate(-5px, -5px);
     border-radius: 0%;
     box-shadow: 5px 5px 0px #3268ae;
 }
@@ -41,6 +42,6 @@
 
 .Shades{
     /* backdrop-filter: invert(80%); */
-    transition: ease-in-out .5s;
+    transition: ease-in-out .3s;
 }
 

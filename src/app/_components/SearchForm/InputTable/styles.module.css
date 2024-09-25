@@ -1,0 +1,7 @@
+.inputTable{
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #3268ae transparent;
+    scrollbar-gutter: stable;
+}
