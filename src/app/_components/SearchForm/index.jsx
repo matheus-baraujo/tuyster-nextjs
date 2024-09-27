@@ -2,8 +2,9 @@ import React from "react";
 import styles from "./styles.module.css";
 import { nunito } from "@/app/fonts";
 
-import {Row, Col} from "react-bootstrap";
+import {Col} from "react-bootstrap";
 import InputTable from "./InputTable";
+import FileInput from './FileInput';
 
 
 
@@ -17,6 +18,7 @@ const index = () => {
 
       <InputTable />
       
+      <FileInput />
       
     </Col> 
     
