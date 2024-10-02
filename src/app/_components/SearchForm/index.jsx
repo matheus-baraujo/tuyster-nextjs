@@ -3,10 +3,7 @@ import styles from "./styles.module.css";
 import { nunito } from "@/app/fonts";
 
 import {Col} from "react-bootstrap";
-import InputTable from "./InputTable";
-import FileInput from './FileInput';
-
-
+import InputSelector from './InputSelector'
 
 const index = () => {
 
@@ -16,12 +13,9 @@ const index = () => {
         Insira sua lista de materiais de construção
       </h3>
 
-      <InputTable />
+      <InputSelector />
       
-      <FileInput />
-      
-    </Col> 
-    
+    </Col>     
   );
 };
 

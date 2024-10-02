@@ -1,0 +1,18 @@
+.wrapper{
+    margin: 20px 0px;
+}
+
+.Submit{
+    background-color: #3268ae;
+    color: white;
+    width: 100%;
+    border: #3268ae 3px solid;
+    transition: ease-in-out .3s;
+}
+
+.Submit:hover{
+    background-color: rgb(71, 66, 66);
+    transform: translate(-5px, -5px);
+    border-radius: 0%;
+    box-shadow: 5px 5px 0px #3268ae;
+}

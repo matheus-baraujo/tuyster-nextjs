@@ -6,7 +6,7 @@ import { Form } from "react-bootstrap";
 import File from './File'
 import Controls from './Controls'
 
-export default function index() {
+export default function index(props) {
     const [items, setItems] = useState([{id: Date.now(), text: '', quant:''}]);
 
     function addItem() {
@@ -34,7 +34,7 @@ export default function index() {
         <>
             <Form id={'FileInput'} className={styles.FileInput} action={'/Lista'} method={'POST'}>
                 <File />
-                <Controls />
+                <Controls selection={props.selection}/>
             </Form>
         </>
     );

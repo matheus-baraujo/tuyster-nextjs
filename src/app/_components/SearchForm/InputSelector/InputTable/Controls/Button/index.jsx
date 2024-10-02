@@ -7,8 +7,8 @@ import { Col, Button } from "react-bootstrap";
 
 export default function index(props) {
   return (
-    <Col xs={{ span: 6 }}>
-      <Button className={styles.Add} onClick={props.handler}>Novo Item</Button>
+    <Col xs={{ span: props.width, offset: props.offset }}>
+      <Button className={styles.button} onClick={props.handler}>{props.text}</Button>
     </Col>
   );
 }

@@ -7,7 +7,7 @@ import InputHeader from './InputHeader'
 import InputItem from './InputItem'
 import Controls from './Controls'
 
-export default function index(){
+export default function index(props){
 
   const [items, setItems] = useState([{id: Date.now(), text: '', quant:''}]);
 
@@ -47,7 +47,7 @@ export default function index(){
           })}
         </Form>
 
-        <Controls addItem={addItem} Submit={''}/>
+        <Controls addItem={addItem} Submit={''} selection={props.selection}/>
         
     </>
   )
